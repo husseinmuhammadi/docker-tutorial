@@ -11,6 +11,9 @@ docker rmi -f $(docker images -a -q)
 ```
 
 
+### What is different between ENV and ARG ?
+
+[Docker environment variables](./images/docker_environment_build_args.png)
 
 ```
 FROM ubuntu:20.04
