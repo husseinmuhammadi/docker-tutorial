@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  demo:
+    image: ubuntu
+    container_name: demo    
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # command: ['printenv']
+    command: ['sh', '-c', 'apt update && apt install curl -y && curl http://host.docker.internal:8080']
+    networks:
+      - demo
+networks:
+  demo:
+    name: demo-network

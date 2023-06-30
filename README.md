@@ -48,3 +48,32 @@ Windows + WSL 2
 ```
 \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\
 ```
+
+## Environment Variables
+
+[How to connect to the Docker host from inside a Docker container?](https://medium.com/@TimvanBaarsen/how-to-connect-to-the-docker-host-from-inside-a-docker-container-112b4c71bc66)
+
+
+```java
+@RestController
+class SpringBootWebApplication {
+
+    @RequestMapping("/")
+    String hello() {
+        "Hello world container. You are able to reach the Docker host!\n"
+    }
+}
+```
+
+```shell
+spring run helloWorld.groovy
+```
+
+```shell
+docker run -it ubuntu bash
+```
+
+```shell
+apt update && apt install curl -y
+curl http://host.docker.internal:8080
+```
